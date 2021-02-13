@@ -178,7 +178,7 @@ df = pd.DataFrame()
 
 for i in range(10):
     q = EventQueue(Emitter(Generator(E, n=50000, rho=0.45, ptype='exp')),
-                   Processor(Generator(E, n=50000, rho=0.45, ptype='exp', gtype='rho')), size=1)
+                   Processor(Generator(E, n=50000, rho=0.45, ptype='exp', gtype='rho')), size=QUEUE_SIZES_STAT)
     q.process()
     df = df.append(q.parameters(), ignore_index=True)
 
